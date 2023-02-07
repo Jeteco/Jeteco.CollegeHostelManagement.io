@@ -1,0 +1,352 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}home.html{% endblock %}
+
+
+{% block 'content' %}
+{% load static %}
+<style>
+    
+    #img1 {
+        background-image: url("{% static 'images/college1.jpeg' %}");
+        min-height: 80vh;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* filter: brightness(30%);
+        filter: opacity(0.5); */
+    }
+
+
+
+    #text1 {
+        text-align: center;
+        text-justify: center;
+
+    }
+
+    .text h1 {
+        width: 5ch;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: textn 6s steps(20) infinite alternate;
+        border-right: 3px solid black;
+        font-size: 70px;
+        font-weight: 600;
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(255, 255, 255);
+
+    }
+
+    .text {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    div.black {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 1905px;
+        height: 760px;
+        background-color: black;
+        opacity: 0.6;
+    }
+
+    .color1 {
+        color: #000;
+    }
+
+    @keyframes textn {
+        0% {
+            width: 5ch;
+        }
+
+        50% {
+            width: 24ch;
+        }
+    }
+
+    .down_main {
+        position: absolute;
+        top: 53%;
+        left: 40%;
+        /* transform: translate(-50%, 50%); */
+    }
+
+    h3 {
+        color: #000000;
+        font-size: 3rem;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    h3::before {
+        content: "Team_Incognito";
+        /* width: 100%; */
+        color: #2ed573;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-right: 0.4rem solid #2ed573;
+        animation: slide 3s linear infinite;
+        -webkit-animation: slide 3s linear infinite;
+        font-family: "Sofia", sans-serif;
+        overflow: hidden;
+    }
+
+    @keyframes slide {
+        0% {
+            width: 0%;
+        }
+
+        50% {
+            width: 100%;
+        }
+
+        100% {
+            width: 0%;
+        }
+
+    }
+
+    .next {
+        position: absolute;
+        top: 58%;
+        left: 37%;
+        /* transform: translate(-50%, 50%); */
+        background-color: aliceblue;
+    }
+
+    .next h2 {
+        padding: 0;
+        margin: 0;
+        color: rgb(0, 0, 0);
+        text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .naming::before {
+        content: '';
+        animation: animate infinite 8s;
+    }
+
+    .form_container {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .form_control {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    input,
+    textarea,
+    select {
+        padding: 6px 10px;
+        border: 1px solid #ffffff;
+        border-radius: 4px;
+        font-size: 15px;
+    }
+
+    input,
+    textarea,
+    select:focus {
+        outline-color: rgb(91, 91, 91);
+    }
+
+    .textarea_control {
+        grid-column: 1/span 2;
+    }
+
+    .textarea_control textarea {
+        width: 100%;
+    }
+
+    @media(max-width: 460px) {
+        .textarea_control {
+            grid-column: 1;
+        }
+    }
+
+    /* .side {
+        margin: 30px 25px 20px 25px;
+    } */
+    .up_down{
+        background-color: #030033;
+    }
+    .up_down .card-body .blockquote h5, .up_down .card-header{
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+    } 
+    .card-header{
+        background-color: #f46e2b;
+        color:rgb(255, 255, 255);
+    }
+
+    .card .card-header{
+        font-size: 20px;
+        font-family: "Mukta", sans-serif;
+        color: rgb(255, 255, 255);
+    }
+
+    div.live {
+        position: absolute;
+        left: 300px;
+        top: 600px;
+    }
+
+    div.live img {
+        width: 100px;
+        height: auto;
+    }
+    .qoute{
+        position: absolute;
+        left: 20%;
+        top: 400px;
+        z-index: 1;
+    }
+
+    .qoute h1 {
+        font-size: 70px;
+        color: rgb(255, 255, 255);
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+    }
+</style>
+<section id="img1">
+    <div class="main">
+        <div class="text">
+            <h1>Hostel Management System</h1>
+        </div>
+        
+        <div class="qoute">
+            <h1>EXPERIENCE A NEW LIVING STYLE <br>
+             AT YOUR SECOND HOME</h1>
+        </div>
+        <div class="black"></div>
+
+        <!-- <div class="next">
+            <h2>Team Member name <span class="naming"></span></h2>
+        </div> -->
+
+    </div>
+    <!-- <div class="down_main">
+        <h3 class="team font-effect-outline">Team_Incognito</h3>
+    </div> -->
+</section>
+
+<!-- Button trigger modal -->
+{% if request.user.is_authenticated %}
+<div id="text1">
+    <button type="button" id="text1" class=" mt-3 btn btn-outline-primary" data-toggle="modal"
+        data-target="#staticBackdrop" style="text-align: center;">Add You
+        Problem</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Problem Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form_container">
+                        <div class="form_control">
+                            <label for="Email">Email</label>
+                            <input id="Email" name="email" placeholder="Enter Last Email" type="Email">
+                        </div>
+                        <div class="form_control">
+                            <label for="colleges">College</label>
+                            <select id="colleges" name="colleges">
+                                <!-- <option value="">Select college</option> -->
+                                <option value="MMMUT Gorakhapur">MMMUT Gorakhapur</option>
+                                <option value="B.H.U Varanasi">B.H.U Varanasi</option>
+                                <option value="New college">New college</option>
+                                <option value="My college">My college</option>
+                            </select>
+                        </div>
+                        <div class="textarea_control">
+                            <label for="description">Problem Description</label>
+                            <textarea name="description" id="description" cols="30" rows="10"
+                                placeholder="Enter your problem description"></textarea>
+                        </div>
+                        <div class="form_control">
+                            <label for="city">City</label>
+                            <input id="city" name="city" placeholder="Enter city" type="text">
+                        </div>
+                        <div class="form_control">
+                            <label for="phone">Phone No:</label>
+                            <input id="phone" name="phone" placeholder="Enter phone number" type="number">
+                        </div>
+                        <div class="form_control">
+                            <label for="date">Date</label>
+                            <input id="date" name="date" type="date">
+                        </div>
+                        <div class="form_control">
+                            <label for="upload">Upload Image</label>
+                            <input id="upload" name="upload" type="file">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<hr>
+{% for item in data1 %}
+<div class="side up_down">
+    <div class="card text-center">
+        <div class="card-header color1">
+            {{forloop.counter}} User Id: <span style="font-size: 20px;">{{item.name}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title color1">Problem Description</h5>
+            <p class="card-text color1">{{item.description}}</p>
+            <a href="/showdata/{{item.id}}" class="text-right btn btn-primary">Show</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+{% if not request.user.is_authenticated %}
+<div class="card side up_down">
+    <div class="card-header">
+        Need To Know
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0 color1">
+            <h5>
+                This project is aimed at developing a system for keeping records and showing information about or in a hostel. This system will help the hostel officer to be able to manage the affairs of the hostel. This system will provide full information about a student in the hostel. It will show rooms available or not and number of people in a particular room. This will also provide information on students who have paid in full or are still owing. This system will also provide a report on the summary detail regarding fees and bills students are owing. Also included is a user module for employees or the hostel officer.
+            </h5>
+            <footer class="blockquote-footer">Team Incognito</footer>
+        </blockquote>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

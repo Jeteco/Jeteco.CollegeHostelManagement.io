@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}contact.html{% endblock %}
+
+
+{% block 'content' %}
+{% load static %}
+<div class="container mt-5">
+    <div class="mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Serial No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Branch</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Hostel</th>
+                    <th scope="col">Button</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for d in data %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{d.name}}</td>
+                    <td>{{d.branch}}</td>
+                    <td>{{d.phone}}</td>
+                    <td>{{d.hostel}}</td>
+                    <td><a class="btn" href="/detail_update/{{d.id}}">Button</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock %}

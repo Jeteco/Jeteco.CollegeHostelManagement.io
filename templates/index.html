@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.cdnfonts.com/css/cg-omega" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
+    <title>Document</title>
+    {% load static %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image:url("{% static 'images/bg1.jpeg' %}");
+            background-repeat: no-repeat;
+            background-size: 1536px auto;
+            background-position: 0 4%;
+            background-attachment: fixed;
+        }
+
+        div.black {
+            background-color: rgb(0, 0, 0);
+            width: 1536px;
+            height: 752px;
+            z-index: -1;
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        * {
+            font-family: "Lucida Bright", sans-serif;
+            text-shadow: 1px 1px 3px rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+        }
+
+        .collegename1 {
+            position: absolute;
+            left: 20%;
+            top: 0;
+            width: 965px;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .collegename1 h1 {
+            font-size: 28px;
+        }
+
+        .collegename1 h2 {
+            position: absolute;
+            left: 156px;
+            top: 35px;
+            font-size: 23px;
+        }
+
+        .discription {
+            position: absolute;
+            left: 37%;
+            top: 68px;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .discription h4 {
+            font-size: 15px;
+        }
+
+        .discription h5 {
+            position: absolute;
+            left: 3%;
+            top: 10px;
+            font-size: 15px;
+        }
+
+        .logo2 {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        .logo2 img {
+            width: 100px;
+            height: auto;
+        }
+
+        .collegename2 {
+            position: absolute;
+            left: 113px;
+            top: 5px;
+        }
+
+        .collegename2 h1 {
+            font-size: 35px;
+        }
+
+        hr {
+            position: absolute;
+            left: 115px;
+            top: 57px;
+            height: 2px;
+            width: 9%;
+            text-align: left;
+            border-width: 0;
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
+        }
+
+        .collegename3 {
+            position: absolute;
+            left: 114px;
+            top: 57px;
+        }
+
+        .collegename3 p {
+            font-size: 12px;
+        }
+
+        .collegename4 {
+            position: absolute;
+            left: 114px;
+            top: 69px;
+        }
+
+        .collegename4 p {
+            font-size: 13px;
+        }
+
+        .logoCC {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+
+        .logoCC img {
+            width: 150px;
+            height: auto;
+        }
+
+        .login {
+            position: absolute;
+            left: 695px;
+            top: 610px;
+            width: 140px;
+            height: 50px;
+        }
+
+        .login a {
+            text-decoration: none;
+        }
+
+        .login a h1 {
+            font-size: 35px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            /* margin: auto; */
+            margin-top: 6px;
+        }
+
+        .login {
+            --c: rgb(255, 255, 255);
+            /* the border color */
+            --b: 3px;
+            /* the border thickness*/
+            --g: 5px;
+            /* the gap on hover */
+            border-radius: 5px;
+
+            padding: calc(var(--g) + var(--b));
+            --_g: #0000 25%, var(--c) 0;
+            background: conic-gradient(from 180deg at top var(--b) right var(--b),
+                    var(--_g)) var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+                conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0 var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+            transition: 0.3s, background-position 0.3s 0.3s;
+            cursor: pointer;
+        }
+
+        .login:hover {
+            --_i: 100%;
+            transition: 0.3s, background-size 0.3s 0.3s;
+        }
+
+        .heading {
+            width: 1000px;
+            position: absolute;
+            left: 18%;
+            top: 27%;
+            text-align: center;
+        }
+
+        .heading h1 {
+            /* color: rgb(25, 27, 60); */
+            font-size: 100px;
+            font-family: "Lucida Bright", sans-serif;
+            text-shadow: 5px 5px 10px rgb(0, 0, 0);
+        }
+
+        .footer1 .fade {
+            position: absolute;
+            bottom: 100px;
+            top: 640px;
+            width: 100%;
+            height: 200px;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0) linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0.4) 50%,
+                    rgba(0, 0, 0, 0.8) 100%) repeat scroll 0 0;
+        }
+
+        .black {
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            top: 840px;
+        }
+
+        .footer2 h1 {
+            position: relative;
+            bottom: 50px;
+        }
+
+        .footer2 {
+            position: absolute;
+            left: 45px;
+            top: 900px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            body {
+                background-image: url("hostel.jpg");
+            }
+
+            div.logo2 {
+                left: 3px;
+                top: 3px;
+            }
+
+            div.logo2 img {
+                width: 200px;
+                height: auto;
+            }
+
+            div.collegename1 {
+                left: 31px;
+                top: 210px;
+                width: 1030px;
+            }
+
+            div.collegename1 h1 {
+                font-size: 30px;
+                font-weight: 500;
+            }
+
+            div.collegename1 h2 {
+                font-size: 30px;
+                font-weight: 500;
+                left: 130px;
+            }
+
+            div.collegename2 {
+                left: 210px;
+                top: 20px;
+            }
+
+            div.collegename2 h1 {
+                font-size: 50px;
+                font-weight: 300;
+            }
+
+            hr {
+                left: 210px;
+                top: 100px;
+                width: 42%;
+                height: 5px;
+            }
+
+            div.collegename3 {
+                left: 210px;
+                top: 97px;
+            }
+
+            div.collegename3 p {
+                font-size: 20px;
+            }
+
+            div.collegename4 {
+                left: 210px;
+                top: 120px;
+            }
+
+            div.collegename4 p {
+                font-size: 20px;
+            }
+
+            div.discription {
+                left: 160px;
+                top: 290px;
+                padding: 0;
+                width: 800px;
+            }
+
+            div.discription h4,
+            div.discription h5 {
+                font-size: 20px;
+            }
+
+            div.discription h5 {
+                top: 20px;
+                left: 130px;
+            }
+
+            div.logoCC {
+                left: 140px;
+                top: 5px;
+            }
+
+            div.logoCC img {
+                width: 40px;
+                height: auto;
+            }
+
+            div.heading {
+                left: 150px;
+                top: 400px;
+                width: 800px;
+                height: 900px;
+            }
+
+            div.heading h1 {
+                font-size: 130px;
+                text-align: center;
+            }
+
+            div.black {
+                height: 1400px;
+            }
+
+            div.login {
+                top: 1000px;
+                left: 490px;
+            }
+
+            div.login a h1 {
+                font-size: 50px;
+            }
+        }
+
+        @media only screen and (min-width: 481px) and (max-width: 1024px) {
+            body {
+                background-image: url("bg1.jpg");
+            }
+
+            div.black {
+                height: 1400px;
+            }
+
+            div.collegename1 {
+                left: 70px;
+                top: 130px;
+            }
+
+            div.collegename1 h2 {
+                font-size: 25px;
+                left: 120px;
+            }
+
+            .discription {
+                left: 225px;
+                top: 190px;
+            }
+
+            div.discription h4 {
+                font-size: 20px;
+            }
+
+            div.discription h5 {
+                font-size: 20px;
+                top: 15px;
+            }
+
+            hr {
+                left: 115px;
+                top: 65px;
+                width: 15%;
+                height: 3px;
+            }
+
+            div.collegename2 {
+                left: 115px;
+                top: 10px;
+            }
+
+            div.collegename3 div.collegename4 {
+                left: 115px;
+            }
+
+            div.collegename3 {
+                top: 67px;
+            }
+
+            div.collegename4 {
+                top: 85px;
+            }
+
+            div.collegename3 p,
+            div.collegename4 p {
+                font-size: 15px;
+            }
+
+            div.heading {
+                left: 175px;
+                width: 700px;
+            }
+
+            div.heading h1 {
+                font-size: 120px;
+            }
+
+            div.login {
+                left: 450px;
+                top: 950px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div
+      id="carousel"
+      class="carousel slide infinite"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="hostel8.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="hostel9.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="hostel10.jpg" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+    </div> -->
+    <!-- <div class="background">
+        <img src="hostel.jpg" alt="">
+    </div> -->
+    <div class="black"></div>
+    <div class="collegename1">
+        <h1>Madan Mohan Malviya University of College, Gorakhpur (U.P.) India</h1>
+        <h2>मदन मोहन मालवीय प्रौद्योगिकी विश्वविद्यालय, गोरखपुर (उ.प्र.) भारत</h2>
+    </div>
+    <div class="discription">
+        <h4>Established by U.P Act No. 22 of 2013 of U.P Government</h4>
+        <h5>(Formerly Madan Mohan Malviya Engineering College)</h5>
+    </div>
+    <div class="logo2"><img src="logo2.png" alt="" /></div>
+    <div class="collegename2">
+        <h1>MMMUT</h1>
+    </div>
+    <hr />
+    <div class="collegename3">
+        <p>GORAKHPUR U.P INDIA</p>
+    </div>
+    <div class="collegename4">
+        <p>NAAC Grade 'A' University</p>
+    </div>
+    <!-- <div class="logoCC"><img src="logoCC.png" alt="" /></div> -->
+    <div class="login">
+        <a href="login.html">
+            <h1>Login</h1>
+        </a>
+    </div>
+    <div class="heading">
+        <h1>Hostel Management System</h1>
+    </div>
+    <!-- <div class="footer1">
+        <div class="fade"></div>
+    </div>
+    <div class="black"></div>
+    <div class="footer2">
+        <h1>Contact Us:</h1>
+    </div> -->
+</body>
+
+</html>

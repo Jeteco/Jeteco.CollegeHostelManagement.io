@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}student_update.com{% endblock %}
+
+{% block 'content' %}
+{% load static %}
+
+<div class="container mt-5">
+    <div>
+        <h1 class="text-center my-5">Student's Details</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputAddress">Name</label>
+                    <input type="text" class="form-control" name="name" id="inputAddress" value="{{item.name}}"
+                        placeholder="Name ">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress2">Branch</label>
+                    <input type="text" class="form-control" name="branch" id="inputAddress2" value="{{item.branch}}"
+                        placeholder="Student's Branch">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress3">Email</label>
+                    <input type="text" class="form-control" name="email" id="inputAddress3" value="{{item.email}}"
+                        placeholder="Email">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress3">Address</label>
+                    <input type="text" class="form-control" name="address" id="inputAddress3" value="{{item.address}}"
+                        placeholder="Address">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress4">Hostel</label>
+                    <input type="text" class="form-control" name="hostel" id="inputAddress4" value="{{item.hostel}}"
+                        placeholder="Hostel name">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="inputCity">Room No</label>
+                    <input type="text" class="form-control" name="room" id="inputCity" value="{{item.room_no}}"
+                        placeholder="room number">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="inputZip">Year</label>
+                    <input type="text" class="form-control" name="year" id="inputZip" value="{{item.year}}"
+                        placeholder="Acedemic year">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputZip1">Phone</label>
+                    <input type="number" class="form-control" name="phone" id="inputZip1" value="{{item.phone}}"
+                        placeholder="Phone number">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-center">Update</button>
+        </form>
+    </div>
+    <br><br>
+
+</div>
+
+{% endblock %}

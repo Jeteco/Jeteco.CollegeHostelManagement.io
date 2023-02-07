@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block 'title' %}mess.com{% endblock %}
+
+
+{% block 'content' %}
+{% load static %}
+<div class="container mt-5">
+    {% for item in timetable %}
+    <h1 class="text-center mt-3">{{item.hostel_name}}</h1>
+    <h3 class="text-center">Mess Menu</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Day</th>
+                <th scope="col">BreakFast</th>
+                <th scope="col">Lunch</th>
+                <th scope="col">Snack</th>
+                <th scope="col">Dinner</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Sunday</th>
+                <td>{{item.sunday_breakfast}}</td>
+                <td>{{item.sunday_lunch}}</td>
+                <td>{{item.sunday_snack}}</td>
+                <td>{{item.sunday_dinner}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Monday</th>
+                <td>{{item.monday_breakfast}}</td>
+                <td>{{item.monday_lunch}}</td>
+                <td>{{item.monday_snack}}</td>
+                <td>{{item.monday_dinner}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Tuesday</th>
+                <td>{{item.tuesday_breakfast}}</td>
+                <td>{{item.tuesday_lunch}}</td>
+                <td>{{item.tuesday_snack}}</td>
+                <td>{{item.tuesday_dinner}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Wednesday</th>
+                <td>{{item.wednesday_breakfast}}</td>
+                <td>{{item.wednesday_lunch}}</td>
+                <td>{{item.wednesday_snack}}</td>
+                <td>{{item.wednesday_dinner}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Thursday</th>
+                <td>{{item.thursday_breakfast}}</td>
+                <td>{{item.thursday_lunch}}</td>
+                <td>{{item.thursday_snack}}</td>
+                <td>{{item.thursday_dinner}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Friday</th>
+                <td>{{item.friday_breakfast}}</td>
+                <td>{{item.friday_lunch}}</td>
+                <td>{{item.friday_snack}}</td>
+                <td>{{item.friday_dinner}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Sarturday</th>
+                <td>{{item.sarturday_breakfast}}</td>
+                <td>{{item.sarturday_lunch}}</td>
+                <td>{{item.sarturday_snack}}</td>
+                <td>{{item.sarturday_dinner}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table border">
+        <thead>
+            <tr>
+                <th scope="col">Mess secretary</th>
+                <th scope="col">Contact Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{item.secretary_name}}</td>
+                <td>{{item.contact_number}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+    {% endfor %}
+</div>
+{% endblock %}

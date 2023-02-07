@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}hostel.html{% endblock %}
+
+
+{% block 'content' %}
+{% load static %}
+<div class="container mt-5">
+    {% for item in data %}
+    <div>
+        <h1 class="text-center my-5">{{item.hostel_name}}</h1>
+        <form method="">
+        
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputAddress">Hostel Name:</label>
+                    <input type="text" class="form-control" name="name" id="inputAddress" value="{{item.hostel_name}}"
+                        placeholder="Name ">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress2">Warden Name:</label>
+                    <input type="text" class="form-control" name="branch" id="inputAddress2" value="{{item.name_warden}}"
+                        placeholder="Student's Branch">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress3">Total Student:</label>
+                    <input type="text" class="form-control" name="email" id="inputAddress3" value="{{item.tstudent}}"
+                        placeholder="Email">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress3">Total Room:</label>
+                    <input type="text" class="form-control" name="address" id="inputAddress3" value="{{item.total_alloted_room}}"
+                        placeholder="total room">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress4">Total Floor:</label>
+                    <input type="text" class="form-control" name="hostel" id="inputAddress4" value="{{item.tfloor}}"
+                        placeholder="Hostel name">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="inputZip">Warden Email:</label>
+                    <input type="text" class="form-control" name="year" id="inputZip" value="{{item.wanden_email}}"
+                        placeholder="Acedemic year">
+                </div>
+
+            </div>
+           
+        </form>
+    </div>
+    {% endfor %}
+    <br><br>
+
+</div>
+
+
+
+{% endblock %}

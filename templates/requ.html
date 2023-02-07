@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}need.com{% endblock %}
+
+
+{% block 'content' %}
+{% load static %}
+<style>
+body{
+
+    background-color: antiquewhite;
+}
+.cc{
+    display: inline-block;
+    padding: 40px;
+    padding-inline: 90px;
+    font-size: xx-large;
+    
+}
+.matter ul{
+    font-weight: bold;
+}
+.cc h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline;
+}
+.main{
+    text-align: center;
+    border-radius: 38px;
+    background-color: rgb(114, 224, 214);
+}
+.main span{
+    text-decoration: underline;
+}
+@media screen and (max-width:700){
+    
+}
+
+
+</style>
+<body>
+ <div class="cc">
+    <h1>Hostel Requirements</h1>
+    <div class="matter">
+        <ul>
+          These are the facilities which should be provided by hostel management system
+        </ul>
+        <div class="imp">
+            <li>Well ventilated rooms.</li><br>
+            <li>Well-lit and well spaced.</li><br>
+            <li>Mosquito nets provided.</li><br>
+            <li>A wardrobe in a 2 seater room & two wardrobe in a 4 seater room.</li><br>
+            <li>Conductive study area: equivalent to the number of residents in Hostel.</li><br>
+            <li>There should be proper electricity supply in each and every room of hostel.</li><br>
+            <li>The rooms should be cleaned and There should be proper curriculum of cleaning schedule of Hostel. </li><br>
+            <li>The rooms of hostel should be well furnished with at least a table-chair should be available for every student.</li><br>
+            <li>Mess food should be healthy and be made with complete cleanliness.</li><br>
+            
+        </div>
+    </div>
+ </div> 
+ <div class="main container text-center mb-3">
+    <h2><span>Note :-</span> Only those problems which are related to these facilities can be resolved by the system</h2>
+    <h3>unnecessary problems will not be tolerated</h3>
+ </div>  
+ {% endblock %}

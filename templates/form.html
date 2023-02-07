@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}home.html{% endblock %}
+
+
+{% block 'content' %}
+{% load static %}
+<style>
+    #img1 {
+        background-image: url("{% static 'images/college1.jpeg' %}");
+        min-height: 80vh;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #text1 {
+        text-align: center;
+        text-justify: center;
+
+    }
+
+    .text h1 {
+        width: 5ch;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: text 6s steps(27) infinite alternate;
+        border-right: 3px solid black;
+        font-size: 60px;
+        font-weight: 600;
+    }
+
+    .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+    @keyframes text {
+        0% {
+            width: 5ch;
+        }
+
+        50% {
+            width: 27ch;
+        }
+    }
+
+    .down_main {
+        position: absolute;
+        top: 53%;
+        left: 50%;
+        /* transform: translate(-50%, 50%); */
+    }
+
+    .next {
+        position: absolute;
+        top: 56%;
+        left: 43%;
+        /* transform: translate(-50%, 50%); */
+    }
+
+    .next h2 {
+        padding: 0;
+        margin: 0;
+        color: #fff;
+        text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .naming::before {
+        content: '';
+        animation: animate infinite 8s;
+    }
+
+    @keyframes animate {
+        0% {
+            content: 'Freelancer';
+        }
+
+        25% {
+            content: 'Market';
+        }
+
+        50% {
+            content: 'Yash';
+        }
+
+        75% {
+            content: 'Chandu';
+        }
+
+        100% {
+            content: 'Prateek';
+        }
+    }
+
+    .form_container {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .form_control {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    input,
+    textarea,
+    select {
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 15px;
+    }
+
+    input,
+    textarea,
+    select:focus {
+        outline-color: rgb(91, 91, 91);
+    }
+    .textarea_control {
+        grid-column: 1/span 2;
+    }
+
+    .textarea_control textarea {
+        width: 100%;
+    }
+
+    @media(max-width: 460px) {
+        .textarea_control {
+            grid-column: 1;
+        }
+    }
+
+    ;
+</style>
+<section id="img1">
+    <div class="main">
+        <div class="text">
+            <h1>Welcome to Hostel Management System</h1>
+        </div>
+        <div class="down_main">
+            <h3>The_Incognitos</h3>
+        </div>
+        <div class="next">
+            <h2>Team Members name <span class="naming"></span></h2>
+        </div>
+
+    </div>
+</section>
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for i in form %}
+        {{i}}
+    {% endfor %}
+    <button type="submit">submit</button>
+</form>
+
+<hr>
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header"> User Id:</div>
+    <div class="card-body text-primary">
+        <h5 class="card-title">Primary card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+    </div>
+</div>
+
+
+
+{% endblock %}
